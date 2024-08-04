@@ -1,10 +1,28 @@
-/* src/components/HomePage.css */
-.text-right a {
-  margin-left: 15px;
-  color: #000;
-  text-decoration: none;
+:root {
+  --main-body-font: 'Oswald';
 }
 
-.text-right a:hover {
-  text-decoration: underline;
+
+.landing-page {
+  font-family: var(--main-body-font);
+  height: 100vh;
+  /* 100% of the viewport height */
+  width: 100vw;
+  /* 100% of the viewport width (optional) */
+  margin: 0;
+  padding: 10vh;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: center
+}
+
+.Title {
+  font-size: 8vw;
+  text-align: left;
+
+}
+
+.linkbutton{
+  font-size: 2vw !important;
 }

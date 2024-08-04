@@ -3,27 +3,25 @@ import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const HomePage = () => {
+const LandingPage = () => {
     return (
-        <Container fluid style={{ backgroundColor: '#e6f7ff', minHeight: '100vh' }}>
-            <Row className='p-3'>
-                <Col md={6}>
-                    <h1>Find Your Team</h1>
-                    <h1>Join the Community.</h1>
-                    <Row className='d-flex align-items-center'>
-                        <Col md={3}>
+        <>
+            <Container className='landing-page ' fluid style={{ backgroundColor: '#e6f7ff', minHeight: '100vh' }}>
+                <h1 className='Title'>Find Your Team</h1>
+                <h1 className='Title'>Join the Community.</h1>
+                <Row className='linkbutton d-flex align-items-center'>
+                        <Col md={2}>
                             <Link to="/signup">
-                                <Button variant="warning" size="lg" className="mt-3">Get started</Button>
+                                <Button size="lg" className="linkbutton mt-3">Get started</Button>
                             </Link>
                         </Col>
-                        <Col md={3}>
+                        <Col md={2}>
                             <a href="/find-your-team" className="d-block mt-3">Find your team</a>
                         </Col>
                     </Row>
-                </Col>
-            </Row>
-        </Container>
+            </Container>
+        </>
     );
 };
 
-export default HomePage;
+export default LandingPage;
