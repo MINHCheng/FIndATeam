@@ -1,14 +1,10 @@
 import './App.css';
 // src/App.js
 import React from 'react';
-import HomePage from './components/LandingPage';
+import MainRouter from './Routers/MainRouter';
 
 const App = () => {
-  return (
-    <div>
-      <HomePage />
-    </div>
-  );
+  return <MainRouter />;
 };
 
 export default App;
