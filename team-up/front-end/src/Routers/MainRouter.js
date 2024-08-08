@@ -3,10 +3,12 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import LandingPage from '../components/LandingPage';
 import SignUp from '../components/SignUp';
+import Navheader from '../components/navheader'
 
 const MainRouter = () => {
     return (
         <BrowserRouter>
+            <Navheader />
             <Routes>
                 <Route exact path="/" element={<LandingPage />} />
                 <Route exact path="/signup" element={<SignUp />} />
