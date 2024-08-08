@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/TEAMUP.github.io/static/css/main.197129fa.css",
+    "main.js": "/TEAMUP.github.io/static/js/main.609d0d70.js",
+    "static/js/453.2cd801a6.chunk.js": "/TEAMUP.github.io/static/js/453.2cd801a6.chunk.js",
+    "index.html": "/TEAMUP.github.io/index.html",
+    "main.197129fa.css.map": "/TEAMUP.github.io/static/css/main.197129fa.css.map",
+    "main.609d0d70.js.map": "/TEAMUP.github.io/static/js/main.609d0d70.js.map",
+    "453.2cd801a6.chunk.js.map": "/TEAMUP.github.io/static/js/453.2cd801a6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.197129fa.css",
+    "static/js/main.609d0d70.js"
+  ]
+}
