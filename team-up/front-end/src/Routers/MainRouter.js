@@ -10,7 +10,7 @@ const MainRouter = () => {
         <BrowserRouter>
             <Navheader />
             <Routes>
-                <Route exact path="/TEAMUP" element={<LandingPage />} />
+                <Route exact path="/" element={<LandingPage />} />
                 <Route exact path="/signup" element={<SignUp />} />
             </Routes>
         </BrowserRouter>
