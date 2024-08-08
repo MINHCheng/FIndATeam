@@ -15,6 +15,31 @@
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  font-size: 1.5rem;
+}
+.nav-button{
+  border-radius: 30%;
+  background-color: var(--font-color);
+  color: var(--main-color);
+  font-weight: 600;
+  border-color: var(--font-color);
+}
+.nav-button:hover{
+  background-color: var(--font-color);
+  color: var(--secondary-color)
+}
+
+@media (max-width: 991px) {
+  .Nav-title {
+      font-size: 1.25rem; /* Smaller size for medium screens */
+  }
+}
+
+/* Small screens (mobile devices, 576px and up) */
+@media (max-width: 767px) {
+  .Nav-title {
+      font-size: 1.25rem; /* Smaller size for small screens */
+  }
 }
 /*            NAVBAR          */
 
@@ -58,8 +83,8 @@
 /* Circle Styles */
 .circle {
   position: absolute;
-  width: 400px;
-  height: 400px;
+  width: 20vw;
+  height: 20vw;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 70%);
   opacity: 1;

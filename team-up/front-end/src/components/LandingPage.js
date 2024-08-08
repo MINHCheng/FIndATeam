@@ -7,20 +7,20 @@ const LandingPage = () => {
     useEffect(() => {
         const container = document.querySelector('.landing-page');
         const circles = document.querySelectorAll('.circle');
-
-        // Get the container's dimensions and position
-        const containerRect = container.getBoundingClientRect();
-        const circleSize = 400; // Size of the circle
-
-        // Function to check if two circles overlap
-        const isOverlapping = (x1, y1, x2, y2, size) => {
-            const distance = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
-            return distance < size;
+        
+        const getCircleSize = () => {
+            return 0.2 * window.innerWidth; // Size of the circle
         };
 
-        // Function to position circles without overlapping
         const positionCircles = () => {
+            const containerRect = container.getBoundingClientRect();
+            const circleSize = getCircleSize();
             const positions = [];
+
+            const isOverlapping = (x1, y1, x2, y2, size) => {
+                const distance = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+                return distance < size;
+            };
 
             circles.forEach(circle => {
                 let xPosition, yPosition, overlapping;
@@ -33,46 +33,56 @@ const LandingPage = () => {
 
                 positions.push({ x: xPosition, y: yPosition });
 
-                // Set the position using CSS left and top properties instead of transform properties
                 gsap.set(circle, {
                     left: xPosition,
                     top: yPosition,
                     opacity: 0 // Start with 0 opacity
                 });
 
-                // Log the circle's position relative to the container
                 console.log('Circle position:', { left: xPosition, top: yPosition });
             });
 
             return positions;
         };
 
+        const handleResize = () => {
+            const newPositions = positionCircles();
+            circles.forEach((circle, index) => {
+                gsap.set(circle, {
+                    left: newPositions[index].x,
+                    top: newPositions[index].y
+                });
+            });
+        };
+
+        // Initial positioning
         positionCircles();
 
         // Timeline for flicker and reposition animation
         const tl = gsap.timeline({ repeat: -1 });
 
-        // Opacity flicker animation
         tl.to(circles, {
-            duration: 10,
+            duration: 5,
             ease: "power1.in",
-            opacity: 1
+            opacity: 0.5
         })
         .to(circles, {
-            duration: 10,
+            duration: 5,
             ease: "power1.out",
             opacity: 0,
             onComplete: () => {
                 // Reposition circles after 2 flickers without animation
-                const newPositions = positionCircles();
-                circles.forEach((circle, index) => {
-                    gsap.set(circle, {
-                        left: newPositions[index].x,
-                        top: newPositions[index].y
-                    });
-                });
+                handleResize();
             }
         });
+
+        // Add resize event listener
+        window.addEventListener('resize', handleResize);
+
+        // Cleanup event listener on component unmount
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
 
     }, []);
 
@@ -85,6 +95,7 @@ const LandingPage = () => {
                 <div className="circle"></div>
                 <div className="circle"></div>
                 <div className="circle"></div>
+                <img></img>
             </Container>
         </>
     );
