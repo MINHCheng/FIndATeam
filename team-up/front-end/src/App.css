@@ -16,6 +16,7 @@
   -moz-user-select: none;
   -ms-user-select: none;
   font-size: 1.5rem;
+  padding-bottom: 0%;
 }
 .nav-button{
   border-radius: 30%;
@@ -26,12 +27,20 @@
 }
 .nav-button:hover{
   background-color: var(--font-color);
+  border-color: var(--secondary-color);
   color: var(--secondary-color)
+}
+.nav-button:focus, .nav-button:active{
+  outline: none;
+  box-shadow: none;
+  background-color: var(--font-color); /* Maintain the same background color */
+  color: var(--main-color);
+  border-color: var(--secondary-color);
 }
 
 @media (max-width: 991px) {
   .Nav-title {
-      font-size: 1.25rem; /* Smaller size for medium screens */
+      font-size: 1.5rem; /* Smaller size for medium screens */
   }
 }
 
@@ -48,7 +57,7 @@
 /*      HOMEPAGE      */
 .landing-page {
   font-family: var(--main-body-font);
-  height: 100vh;
+  height: 92vh;
   width: 100vw !important;
   margin: 0;
   display: flex;
@@ -94,6 +103,20 @@
   top: 0;
   left: 0;
   z-index: 0;
+}
+
+
+.scroll{
+  display: flex;
+  flex-direction: column;
+  bottom: 5vh;
+  align-items: center;
+  padding: 5px;
+
+  position: absolute;
+}
+.fa-angle-down{
+  padding-top: 1vh;
 }
 /*      HOMEPAGE      */
 
